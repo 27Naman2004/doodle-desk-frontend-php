@@ -1,5 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import "./ValueCard.css";
 
 interface ValueCardProps {
   title: string;
@@ -9,29 +10,27 @@ interface ValueCardProps {
 }
 
 const ValueCard = ({ title, description, image, bgColor = 'primary' }: ValueCardProps) => {
-  const getBgColor = () => {
-    return bgColor === 'primary' ? 'bg-doodle-primary' : 'bg-doodle-secondary';
-  };
+  const cardClass = bgColor === 'primary' ? 'value-card-primary' : 'value-card-secondary';
 
   return (
-    <Card className={`${getBgColor()} text-white overflow-hidden hover:shadow-lg transition-shadow duration-300 transform hover:-translate-y-1`}>
-      <div className="flex justify-center pt-6">
-        <div className="relative w-24 h-24 rounded-full bg-white p-2 shadow-md">
+    <Card className={`value-card ${cardClass}`}>
+      <div className="value-card-image-container">
+        <div className="value-card-image-wrapper">
           <img 
             src={image} 
             alt={title} 
-            className="w-full h-full object-cover rounded-full"
+            className="value-card-image"
             onError={(e) => {
               (e.target as HTMLImageElement).src = 'https://via.placeholder.com/100?text=Value';
             }}
           />
         </div>
       </div>
-      <CardHeader className="text-center pb-2">
-        <CardTitle className="text-xl font-heading">{title}</CardTitle>
+      <CardHeader className="value-card-header">
+        <CardTitle className="value-card-title">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <CardDescription className="text-white/90 text-center">
+        <CardDescription className="value-card-description">
           {description}
         </CardDescription>
       </CardContent>
