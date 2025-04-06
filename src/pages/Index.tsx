@@ -5,6 +5,7 @@ import Slider from '@/components/Slider';
 import ValueCard from '@/components/ValueCard';
 import BabysitterCard from '@/components/BabysitterCard';
 import { Button } from '@/components/ui/button';
+import './Index.css';
 
 const Index = () => {
   // Slider data
@@ -80,25 +81,25 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="page-container">
       <Header />
       
       {/* Hero Section with Slider */}
       <Slider slides={sliderData} />
       
       {/* Core Values Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-heading text-gray-800 mb-2">Why Choose Us</h2>
-            <h3 className="text-2xl font-heading text-doodle-primary mb-4">Our Core Values</h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+      <section className="values-section">
+        <div className="section-container">
+          <div className="section-header">
+            <h2 className="section-title">Why Choose Us</h2>
+            <h3 className="section-subtitle">Our Core Values</h3>
+            <p className="section-description">
               With Us, we always put the quality of teaching children first, 
               please rest assured when sending children at DoodleDesk.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="values-grid">
             {valueCardData.map((card, index) => (
               <ValueCard
                 key={index}
@@ -113,13 +114,13 @@ const Index = () => {
       </section>
       
       {/* How to Enroll Section */}
-      <section className="py-16 px-4 bg-gray-100">
-        <div className="container mx-auto">
-          <div className="bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto">
-            <h2 className="text-3xl font-heading text-center text-doodle-primary mb-6">
+      <section className="enroll-section">
+        <div className="section-container">
+          <div className="enroll-box">
+            <h2 className="enroll-title">
               How To Let Your Child Study At Doodle Desk?
             </h2>
-            <p className="text-gray-600 mb-8 text-center">
+            <p className="enroll-description">
               At Doodle Desk Daycare, we understand that choosing the right place for your child 
               is one of the most important decisions you'll make as a parent. That's why we're 
               dedicated to creating a nurturing, safe, and engaging environment where every child 
@@ -129,8 +130,8 @@ const Index = () => {
               child grows with confidence, joy, and curiosity. More than just a daycare, we're a trusted 
               partner in your child's early journey.
             </p>
-            <div className="flex justify-center">
-              <Button className="bg-doodle-primary hover:bg-doodle-primary/90 text-white">
+            <div className="enroll-action">
+              <Button className="enroll-button">
                 Enroll Your Child Today
               </Button>
             </div>
@@ -139,16 +140,16 @@ const Index = () => {
       </section>
       
       {/* Babysitters Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-heading text-gray-800 mb-4">Our Babysitters</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+      <section className="babysitters-section">
+        <div className="section-container">
+          <div className="section-header">
+            <h2 className="section-title">Our Babysitters</h2>
+            <p className="section-description">
               Meet our team of experienced and caring professionals dedicated to your child's growth and development.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="babysitters-grid">
             {babysitterData.map((babysitter, index) => (
               <BabysitterCard
                 key={index}
@@ -164,15 +165,15 @@ const Index = () => {
       </section>
       
       {/* Contact Us Section */}
-      <section className="py-16 px-4 bg-doodle-secondary text-white">
-        <div className="container mx-auto">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl font-heading mb-4">Contact Us</h2>
-            <p className="mb-6">Feel Free to contact us for any enquiry</p>
-            <div className="space-y-2">
-              <p><span className="font-bold">Email:</span> sharma.shivani9155@gmail.com</p>
-              <p><span className="font-bold">Phone:</span> 7004675031</p>
-              <p><span className="font-bold">Address:</span> Jalandhar, Punjab</p>
+      <section className="contact-section">
+        <div className="section-container">
+          <div className="contact-content">
+            <h2 className="contact-title">Contact Us</h2>
+            <p className="contact-description">Feel Free to contact us for any enquiry</p>
+            <div className="contact-details">
+              <p><span className="contact-label">Email:</span> sharma.shivani9155@gmail.com</p>
+              <p><span className="contact-label">Phone:</span> 7004675031</p>
+              <p><span className="contact-label">Address:</span> Jalandhar, Punjab</p>
             </div>
           </div>
         </div>

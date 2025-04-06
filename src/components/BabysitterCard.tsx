@@ -1,5 +1,6 @@
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import "./BabysitterCard.css";
 
 interface BabysitterCardProps {
   name: string;
@@ -17,32 +18,32 @@ const BabysitterCard = ({
   availability
 }: BabysitterCardProps) => {
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-      <div className="flex justify-center pt-6">
-        <div className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-doodle-primary">
+    <Card className="babysitter-card">
+      <div className="babysitter-image-container">
+        <div className="babysitter-image-wrapper">
           <img 
             src={image} 
             alt={name} 
-            className="w-full h-full object-cover"
+            className="babysitter-image"
             onError={(e) => {
               (e.target as HTMLImageElement).src = 'https://via.placeholder.com/150?text=Teacher';
             }}
           />
         </div>
       </div>
-      <CardHeader className="text-center pb-2">
-        <CardTitle className="text-2xl font-heading text-doodle-primary">{name}</CardTitle>
+      <CardHeader className="babysitter-header">
+        <CardTitle className="babysitter-title">{name}</CardTitle>
       </CardHeader>
-      <CardContent className="text-center">
-        <CardDescription className="text-gray-700 mb-4">
+      <CardContent className="babysitter-content">
+        <CardDescription className="babysitter-description">
           {description}
         </CardDescription>
-        <div className="space-y-2 text-sm font-medium">
-          <p className="flex items-center justify-center gap-1">
-            <span className="font-semibold">Experience:</span> {experience}
+        <div className="babysitter-details">
+          <p className="babysitter-info">
+            <span className="babysitter-label">Experience:</span> {experience}
           </p>
-          <p className="flex items-center justify-center gap-1">
-            <span className="font-semibold">Availability:</span> {availability}
+          <p className="babysitter-info">
+            <span className="babysitter-label">Availability:</span> {availability}
           </p>
         </div>
       </CardContent>
